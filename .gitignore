@@ -1,0 +1,28 @@
+# Byte-code files
+*.pyc
+__pycache__/
+
+# Virtual environment
+# (commonly named .venv, venv, or env)
+.venv/
+venv/
+env/
+
+# IDE-specific files (optional, remove those you don't use)
+.vscode/    # VS Code
+.idea/      # PyCharm
+
+# Environment variables
+.env
+
+# Test/coverage files
+.coverage
+/htmlcov/
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# OS generated files
+.DS_Store # macOS
+Thumbs.db # Windows
