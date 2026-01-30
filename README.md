@@ -8,11 +8,11 @@ Ce projet fournit une **architecture complète, fonctionnelle et industrialisabl
 
 ## 🎯 Objectifs
 
-* Ingestion de flux de données en temps réel
-* Traitement streaming (nettoyage, agrégation, enrichissement)
-* Stockage optimisé pour requêtes rapides
-* Exposition via API REST
-* Architecture scalable et résiliente
+* Ingestion **horaire automatique** des taux de change (API publique)
+* Orchestration avec **Apache Airflow**
+* Traitement temps réel avec **Spark Structured Streaming**
+* Détection d’anomalies (variations anormales)
+* Stockage analytique et exposition via API REST
 
 ---
 
@@ -62,19 +62,20 @@ real-time-data-platform/
 ├── docker-compose.yml
 ├── README.md
 │
-├── producer/
-│   ├── producer.py
+├── airflow/
+│   ├── dags/
+│   │   └── exchange_rate_dag.py
 │   └── requirements.txt
 │
+├── producer/
+│   └── exchange_rate_producer.py
+│
 ├── spark/
-│   ├── spark_streaming.py
-│   └── requirements.txt
+│   └── spark_anomaly_detection.py
 │
 ├── api/
 │   ├── main.py
-│   ├── database.py
-│   ├── models.py
-│   └── requirements.txt
+│   └── database.py
 │
 └── sql/
     └── init.sql
